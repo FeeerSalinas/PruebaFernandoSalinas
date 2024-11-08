@@ -1,0 +1,25 @@
+﻿@model PruebaFernandoSalinas.Models.Empleado;
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Eliminar un empleado
+        </div>
+        <div class="card-body">
+            <form asp-controller="Empleado" asp-action="Delete" method="post">
+                <input type="hidden" asp-for="IdEmpleado" />
+                <label class="form-control">Nombre: @Model.NombreEmpleado</label>
+                <label class="form-control">Apellido: @Model.ApellidoEmpleado</label>
+                <label class="form-control">Edad: @Model.EdadEmpleado</label>
+                <label class="form-control">Direccion: @Model.DireccionEmpleado</label>
+                <label class="form-control">Numero: @Model.NumeroTelefono</label>
+                <label class="form-control">Email: @Model.EmailEmpleado</label>
+                <button class="btn btn-danger">
+                    Eliminar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+

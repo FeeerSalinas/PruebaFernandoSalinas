@@ -1,0 +1,47 @@
+﻿@model List<PruebaFernandoSalinas.Models.Empleado>;
+
+
+
+<div class="container my-4">
+    <div class="text-center">
+        <a  class="btn btn-primary" asp-controller="Empleado" asp-action="Create">Agregar un empleado</a>
+    </div>
+    <div class="row">
+        <div class="col-lg-10 offset-lg-1">
+            <h2 class="text-center mb-4">Nuestros Empleados</h2>
+            <table class="table table-striped table-hover table-bordered align-middle">
+                <thead class="table-dark text-center">
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Edad</th>
+                        <th>Direccion</th>
+                        <th>Numero de telefono</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.IdEmpleado</td>
+                            <td>@item.NombreEmpleado</td>
+                            <td>@item.ApellidoEmpleado</td>
+                            <td>@item.EdadEmpleado</td>
+                            <td>@item.DireccionEmpleado</td>
+                            <td>@item.NumeroTelefono</td>
+                            
+                          
+                            <td class="text-center">
+                                <a asp-controller="Empleado" asp-action="Edit" asp-route-id="@item.IdEmpleado">Editar</a>
+                                <a asp-controller="Empleado" asp-action="Delete" asp-route-id="@item.IdEmpleado">Eliminar</a>
+                            </td>
+                           
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
